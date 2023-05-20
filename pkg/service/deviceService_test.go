@@ -7,6 +7,14 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func Test_DeviceService_NewDeviceService(t *testing.T) {
+	device := &domain.Device{
+		Enabled: true,
+	}
+	deviceService := NewDeviceService(device)
+	assert.NotNil(t, deviceService)
+}
+
 func Test_DeviceService_IsEnabled(t *testing.T) {
 	tests := []struct {
 		name string
